@@ -1,0 +1,37 @@
+<h1>Transaction</h1>
+<form  [formGroup]="userForm" (ngSubmit)="onSubmit(userForm)">
+  <table>
+    <tr>
+
+        <td> <label>From Account</label></td>
+        <td><input type="text"  formControlName="account1" >
+          <app-control [control]="userForm.get('account1')"></app-control>
+        </td>
+
+
+  </tr>
+  <br>
+  <tr>
+
+   <td> <label>To Account </label></td>
+   <td> <input type="text"  formControlName="account2" >
+    <app-control [control]="userForm.get('account2')"></app-control>
+   </td>
+  <br></tr>
+<tr>
+
+   <td> <label>Amount</label></td>
+    <td><input type="text"  formControlName="amount" >
+      <app-control [control]="userForm.get('amount')"></app-control>
+    </td>
+  <br>
+</tr><tr>
+
+    <td><label>Date</label></td>
+<td><input type="date" formControlName="date" ></td>
+<br></tr>
+
+</table>
+ <button  type="submit" >Submit</button>
+  </form>
+  

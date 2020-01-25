@@ -1,0 +1,20 @@
+<h2>Transaction  Details :</h2>
+       <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442;  Start searching for a hero by id or name or country">
+      <table class="table">
+        <thead>
+          <tr>
+          <td>To Account No.</td>
+          <td>Beneficiary Account no.</td>
+          <td>Amount</td>
+          <td>Date</td>
+          </tr>
+        </thead>
+        <tbody *ngFor="let user of myObservableArray| async |filter1:searchText">
+          <tr>
+            <td>{{user.account1}}</td>
+            <td>{{user.account2}}</td>
+            <td>{{user.amount}}</td>
+            <td>{{user.date}}</td>
+          </tr>
+        </tbody>
+      </table>

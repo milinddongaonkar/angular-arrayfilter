@@ -1,0 +1,11 @@
+.container {
+  padding-top: 50px;
+  padding-bottom: 10px;
+  color: #405065;
+}
+
+.by-country, .by-name {
+  text-decoration: underline;
+  padding-left: 10px;
+  cursor: pointer;
+}

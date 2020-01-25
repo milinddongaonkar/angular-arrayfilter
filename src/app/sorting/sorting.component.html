@@ -1,0 +1,68 @@
+<div class="container text-center">
+  <h1>{{title}}</h1>
+</div>
+<div class="container">
+  <div class="row text-right">
+    Sort by:
+    <span (click)="sortList('account1')" class="by-name">Account1</span>
+    <span *ngIf="key === 'account1'">
+      <span *ngIf="reverse">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="!reverse">
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+      </span>
+    </span>
+
+    <span (click)="sortList('account2')" class="by-name">Account2</span>
+    <span *ngIf="key === 'account2'">
+      <span *ngIf="reverse">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="!reverse">
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+      </span>
+    </span>
+
+    <span (click)="sortList('amount')" class="by-country">Amount</span>
+    <span *ngIf="key === 'amount'">
+      <span *ngIf="reverse">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="!reverse">
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+      </span>
+    </span>
+     <span (click)="sortList('date')" class="by-country">Date</span>
+    <span *ngIf="key === 'date'">
+      <span *ngIf="reverse">
+          <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      </span>
+      <span *ngIf="!reverse">
+        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+      </span>
+    </span>
+    
+  </div>
+
+  <div class="row">
+    <table class="table table-bordered" id="mytable">
+      <thead>
+      <tr>
+        <th>From Account</th>
+        <th>Beneficiary Account No.</th>
+        <th>Amount</th>
+        <th>Date</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let hero of myObservableArray | async| orderBy: key : reverse">
+        <td>{{hero.account1}}</td>
+        <td>{{hero.account2}}</td>
+        <td>{{hero.amount}}</td>
+        <td>{{hero.date}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
